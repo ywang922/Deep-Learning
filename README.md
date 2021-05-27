@@ -11,7 +11,7 @@ Use the above to answer the following:
 
 > ##### Which model has a lower loss?
 
-> LSTM Stock Predictor Using Closing Prices model has a lower loss, becuase its loss is 0.0567; on the other hand, LSTM Stock Predictor Using Fear and Greed Index loss is 0.1747.
+> LSTM Stock Predictor Using Closing Prices model has a lower loss, becuase its loss (in window size 10) is 0.0567; on the other hand, LSTM Stock Predictor Using Fear and Greed Index loss (in window size 10) is 0.1747.
 
 
 
@@ -23,5 +23,5 @@ Use the above to answer the following:
 
 > ##### Which window size works best for the model?
 
->  After comparing both models in window size 1, 5, 10, window size 1 works best for the LSTM Stock Predictor Using Closing Prices model. Because window 1 has the lowest loss (0.0248), and Real Vs. Predicted Prices plot is the most accurate.
+>  After comparing both models in window size 1, 5, 10, window size 1 works best for the LSTM Stock Predictor Using Closing Prices model. Because window size 1 has the lowest loss (0.0248), and Real Vs. Predicted Prices plot is the most accurate.
 - - -
