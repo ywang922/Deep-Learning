@@ -1,27 +1,46 @@
-# LSTM Stock Predictor
+# Long Short Time Memory Stock Predictor
 
 ![deep-learning.jpg](Images/deep-learning.jpg)
 
+Due to the volatility of cryptocurrency speculation, investors will often try to incorporate sentiment from social media and news articles to help guide their trading strategies. One such indicator is the [Crypto Fear and Greed Index (FNG)](https://alternative.me/crypto/fear-and-greed-index/) which attempts to use a variety of data sources to produce a daily FNG value for cryptocurrency. I developed and evaluated deep learning models using both the FNG values and simple closing prices to determine if the FNG indicator provides a better signal for cryptocurrencies than the normal closing price data.
+
+I used Deep Learning Recurrent Neural Networks to model bitcoin closing prices. One model will use the FNG indicators to predict the closing price while the second model will use a window of closing prices to predict the nth closing price.
+
+- - -
+
+
+### Prepared the data for training and testing
+
+1. For each model, I used 70% of the data for training and 30% of the data for testing.
+
+2. Applied a MinMaxScaler to scale the data for the model.
+
+3. Finally, reshaped the data to fit the model's requirement of (samples, time steps, features).
+
+### Build and train custom LSTM RNNs
+
+In each Jupyter Notebook, create the same custom LSTM RNN architecture. In one notebook, you will fit the data using the FNG values. In the second notebook, you will fit the data using only closing prices.
+
+Use the same parameters and training steps for each model. This is necessary to compare each model accurately.
 
 ### Evaluate the performance of each model
 
 Finally, use the testing data to evaluate each model and compare the performance.
 
-Use the above to answer the following:
+### The Architecture of the model 
 
-> ##### Which model has a lower loss?
+In each Jupyter Notebook, created the same custom LSTM RNN architecture. 
 
-> LSTM Stock Predictor Using Closing Prices model has a lower loss, becuase its loss (in window size 10) is 0.0567; on the other hand, LSTM Stock Predictor Using Fear and Greed Index loss (in window size 10) is 0.1747.
-
-
-
-> ##### Which model tracks the actual values better over time?
-
-> LSTM Stock Predictor Using Closing Prices model tracks the actual values better over time, because the loss was less, and Real Vs. Predicted Prices plot is more accurate than the other model.
+![architecture](Images/arch.png)
 
 
+Used the same parameters and training steps for each model. This was necessary to compare each model accurately.
 
-> ##### Which window size works best for the model?
 
->  After comparing both models in window size 1, 5, 10, window size 1 works best for the LSTM Stock Predictor Using Closing Prices model. Because window size 1 has the lowest loss (0.0248), and Real Vs. Predicted Prices plot is the most accurate.
+## Model Performance
+
+The model performed as follow:
+
+
+![performance](Images/actualvsmodel.png)
 - - -
